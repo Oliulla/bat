@@ -1,12 +1,13 @@
 import { BiSolidReport } from "react-icons/bi";
 import { BsReceiptCutoff } from "react-icons/bs";
-import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaEdit, FaMapMarkedAlt } from "react-icons/fa";
 import { FaTableCells, FaUser, FaUsers } from "react-icons/fa6";
 import { GiTeamIdea } from "react-icons/gi";
 import { GrUserWorker } from "react-icons/gr";
 import { ImProfile } from "react-icons/im";
 import {
     MdDashboard,
+    MdGroups,
     MdMapsHomeWork,
     MdOutlineCoPresent,
     MdVerified,
@@ -25,6 +26,33 @@ export const items = [
         key: "/super-user",
         icon: <FaUsers />,
         serial: 0,
+        children: [
+            {
+                label: "Add Group",
+                key: "/super-user/add-group",
+                icon: <MdGroups />,
+            },
+            {
+                label: "View Groups",
+                key: "/super-user/view-groups",
+                icon: <FaUsers />,
+            },
+            {
+                label: "Edit Group",
+                key: "/super-user/edit-group",
+                icon: <FaEdit />,
+            },
+            {
+                label: "Add User",
+                key: "/super-user/add-user",
+                icon: <FaUser />,
+            },
+            {
+                label: "View Users",
+                key: "/super-user/view-users",
+                icon: <FaUsers />,
+            },
+        ],
     },
     {
         label: "Dashboard",
