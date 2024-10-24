@@ -1,5 +1,16 @@
 import Attendance from "@/pages/Attendance/Attendance";
+import NMSM from "@/pages/CampaignManagement/NMSM/NMSM";
+import OthersCampaign from "@/pages/CampaignManagement/OthersCampaign/OthersCampaign";
+import PriceComplience from "@/pages/CampaignManagement/PriceComplience/PriceComplience";
+import RegularCampaign from "@/pages/CampaignManagement/RegularCampaign/RegularCampaign";
+import Survey from "@/pages/CampaignManagement/Survey/Survey";
+import TSR from "@/pages/CampaignManagement/TSR/TSR";
 import Dashboard from "@/pages/Dashboard/Dashboard";
+import CmHistory from "@/pages/InventoryManagement/CmHistory/CmHistory";
+import CmSummary from "@/pages/InventoryManagement/CmSummary/CmSummary";
+import DamageAndLost from "@/pages/InventoryManagement/DamageAndLost/DamageAndLost";
+import PointHistory from "@/pages/InventoryManagement/PointHistory/PointHistory";
+import PointSummary from "@/pages/InventoryManagement/PointSummary/PointSummary";
 import MyProfile from "@/pages/MyProfile/MyProfile";
 import Notice from "@/pages/Notice/Notice";
 import AddGroup from "@/pages/SuperUser/AddGroup/AddGroup";
@@ -66,9 +77,72 @@ const routeData = [
         element: <Attendance />,
     },
     {
+        name: "Inventory Management",
+        path: "/inventory-management",
+    },
+    // INFO: inventory management childrens
+    {
+        name: "Point History ",
+        path: "/inventory-management/point-history",
+        element: <PointHistory />,
+    },
+    {
+        name: "Point Summary ",
+        path: "/inventory-management/point-summary",
+        element: <PointSummary />,
+    },
+    {
+        name: "Damage And Lost",
+        path: "/inventory-management/damage-and-lost",
+        element: <DamageAndLost />,
+    },
+    {
+        name: "CM History",
+        path: "/inventory-management/cm-history",
+        element: <CmHistory />,
+    },
+    {
+        name: "CM Summary",
+        path: "/inventory-management/cm-summary",
+        element: <CmSummary />,
+    },
+    // INFO: pmm management module
+    {
         name: "PMM Management",
         path: "/pmm-management",
         element: <MyProfile />,
+    },
+
+    // INFO: Visit call children's
+    {
+        name: "Regular Campaign",
+        path: "/visit-call/regular-campaign",
+        element: <RegularCampaign />,
+    },
+    {
+        name: "Others Campaign",
+        path: "/visit-call/others-campaign",
+        element: <OthersCampaign />,
+    },
+    {
+        name: "NMSM",
+        path: "/visit-call/nmsm",
+        element: <NMSM />,
+    },
+    {
+        name: "Price Compliance",
+        path: "/visit-call/price-compliance",
+        element: <PriceComplience />,
+    },
+    {
+        name: "TSR",
+        path: "/visit-call/tsr",
+        element: <TSR />,
+    },
+    {
+        name: "Survey",
+        path: "/visit-call/survey",
+        element: <Survey />,
     },
 ];
 

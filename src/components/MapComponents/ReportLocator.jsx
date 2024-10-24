@@ -4,11 +4,11 @@ import {
     InfoWindow,
     Map,
     Pin,
-} from '@vis.gl/react-google-maps';
-import { Modal } from 'antd';
-import dayjs from 'dayjs';
-import Image from 'next/image';
-import { useCallback, useState } from 'react';
+} from "@vis.gl/react-google-maps";
+import { Modal } from "antd";
+import dayjs from "dayjs";
+import Image from "next/image";
+import { useCallback, useState } from "react";
 
 const ReportLocator = ({ data, isOpen, onClose }) => {
     const [infoWindowVisible, setInfoWindowVisible] = useState(false);
@@ -24,7 +24,7 @@ const ReportLocator = ({ data, isOpen, onClose }) => {
         setInfoWindowPosition(null);
     };
 
-    console.log('report data=> ', data);
+    console.log("report data=> ", data);
 
     return (
         <Modal
@@ -36,13 +36,13 @@ const ReportLocator = ({ data, isOpen, onClose }) => {
             wrapClassName="wrapClassName"
         >
             <APIProvider
-                apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || ''}
-                onLoad={() => console.log('Maps API has loaded.')}
+                apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY || ""}
+                onLoad={() => console.log("Maps API has loaded.")}
                 className="ApiProvider"
             >
                 <Map
                     className="map !h-[calc(100vh-200px)]"
-                    mapId={'mapbox/streets-v11'}
+                    mapId={"mapbox/streets-v11"}
                     defaultZoom={10}
                     defaultCenter={data?.location}
                 >
@@ -50,13 +50,13 @@ const ReportLocator = ({ data, isOpen, onClose }) => {
                         key={data?._id}
                         position={data?.location}
                         onClick={() => handleMarkerClick(data?.location)}
-                        onMouseEnter={() => console.log('Mouse entered')}
-                        onMouseLeave={() => console.log('Mouse left')}
+                        onMouseEnter={() => console.log("Mouse entered")}
+                        onMouseLeave={() => console.log("Mouse left")}
                     >
                         <Pin
-                            background={'#FBBC04'}
-                            glyphColor={'#000'}
-                            borderColor={'#000'}
+                            background={"#FBBC04"}
+                            glyphColor={"#000"}
+                            borderColor={"#000"}
                         />
                     </AdvancedMarker>
 
@@ -65,7 +65,7 @@ const ReportLocator = ({ data, isOpen, onClose }) => {
                             position={infoWindowPosition}
                             onClose={handleCloseInfoWindow}
                             style={{
-                                transition: 'opacity 0.3s ease',
+                                transition: "opacity 0.3s ease",
                             }}
                         >
                             <div>
@@ -79,7 +79,7 @@ const ReportLocator = ({ data, isOpen, onClose }) => {
                                 <p>{data?.user?.usercode}</p>
                                 <p>
                                     {dayjs(data?.punchInAt).format(
-                                        'DD-MM-YYYY HH:mm A',
+                                        "DD-MM-YYYY HH:mm A"
                                     )}
                                 </p>
                             </div>
