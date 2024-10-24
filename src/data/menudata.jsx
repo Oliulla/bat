@@ -3,7 +3,7 @@ import { BsReceiptCutoff } from "react-icons/bs";
 import { FaEdit, FaMapMarkedAlt } from "react-icons/fa";
 import { FaTableCells, FaUser, FaUsers } from "react-icons/fa6";
 import { GiTeamIdea } from "react-icons/gi";
-import { GrUserWorker } from "react-icons/gr";
+import { GrUserManager, GrUserWorker } from "react-icons/gr";
 import { ImProfile } from "react-icons/im";
 import {
     MdDashboard,
@@ -61,6 +61,29 @@ export const items = [
         serial: 1,
     },
     {
+        label: "PMM Management",
+        key: "/pmm-management",
+        icon: <GrUserManager />,
+        serial: 5,
+        children: [
+            {
+                label: "PMM Dashboard",
+                key: "/pmm-dashboard",
+                icon: <MdMapsHomeWork />,
+            },
+            {
+                label: "PMM Monitoring",
+                key: "/pmm-monitoring",
+                icon: <FaEdit />,
+            },
+            {
+                label: "PMM Profile",
+                key: "/pmm-profile",
+                icon: <MdVerified />,
+            },
+        ],
+    },
+    {
         label: "Tickets",
         key: "/tickets",
         icon: <GiTeamIdea />,
@@ -72,12 +95,7 @@ export const items = [
         icon: <MdOutlineCoPresent />,
         serial: 3,
     },
-    {
-        label: "PMM Management",
-        key: "/student-labor/report",
-        icon: <GrUserWorker />,
-        serial: 5,
-    },
+
     {
         label: "Training Materials",
         key: "/training-materials",

@@ -1,4 +1,5 @@
 import Attendance from "@/pages/Attendance/Attendance";
+import Dashboard from "@/pages/Dashboard/Dashboard";
 import MyProfile from "@/pages/MyProfile/MyProfile";
 import Notice from "@/pages/Notice/Notice";
 import AddGroup from "@/pages/SuperUser/AddGroup/AddGroup";
@@ -47,7 +48,7 @@ const routeData = [
     {
         name: "Dashboard",
         path: "/dashboard",
-        element: <MyProfile />,
+        element: <Dashboard />,
     },
     {
         name: "Tickets",
