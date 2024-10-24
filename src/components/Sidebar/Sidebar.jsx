@@ -1,41 +1,105 @@
-import { items } from "@/data/menudata";
-import { Button, Menu } from "antd";
-import Sider from "antd/es/layout/Sider";
 
-const Sidebar = ({ role }) => {
-  return (
-    <Sider
-      width={270}
-      collapsible
-      className="sticky bottom-0 top-0 h-[calc(100vh-48px)] min-h-[calc(100vh)] overflow-auto"
-    >
-      <div className="m-4 flex h-16 items-center justify-center rounded-md bg-white p-4">
-        {/* <img src={mLenz} alt="logo" className="h-auto w-full" /> */}
-      </div>
-      <Menu
-        theme="dark"
-        mode="inline"
-        // selectedKeys={selectedKeys}
-        // openKeys={openKeys}
-        // onOpenChange={setOpenKeys}
-        // onClick={handleMenuClick}
-        items={items}
-      />
-      <div className="m-4 flex items-center justify-center">
-        <Button
-          danger
-          type="primary"
-          variant="primary"
-          // onClick={() => handleLogout()}
-          className="animate-bounce-reveal mx-auto mb-16 w-full"
-          // loading={isLoading}
-          // disabled={isLoading}
+import { mLenz } from '@/assets';
+import { items } from '@/data/menudata';
+import { useLogoutMutation } from '@/redux/features/auth/authApi';
+import { setCurrentPath } from '@/redux/features/others/pathSlice';
+import { useAppDispatch } from '@/redux/hooks';
+import { Button, Image, Menu, notification } from 'antd';
+import Sider from 'antd/es/layout/Sider';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const Sidebar = () => {
+    const navigate = useNavigate()
+    const dispatch = useAppDispatch();
+    const [selectedKeys, setSelectedKeys] = useState("");
+    const [openKeys, setOpenKeys] = useState([]);
+    const [logout, { isLoading, isError, error }] = useLogoutMutation();
+    const getOpenKeys = (path) => {
+        const pathParts = path.split('/').filter(Boolean);
+        if (pathParts.length > 1) {
+            return [pathParts[0]];
+        }
+        return [];
+    };
+
+    const getSelectedKeys = (path) => [
+        path.split('/').filter(Boolean).join('/'),
+    ];
+
+    useEffect(() => {
+        const path = window.location.pathname;
+        dispatch(setCurrentPath(path));
+        setSelectedKeys(getSelectedKeys(path));
+        setOpenKeys(getOpenKeys(path));
+    }, [window?.location?.pathname , dispatch]);
+
+    const handleMenuClick = ({ key }) => {
+        console.log("key", key)
+        dispatch(setCurrentPath(key));
+        navigate(key)
+        setSelectedKeys(key)
+    };
+
+    console.log("selected key", selectedKeys)
+
+
+    const handleLogout = async () => {
+        const result = await logout();
+
+        if (result?.data?.statusCode === 200) {
+            localStorage.removeItem('authData');
+            document.cookie = `authToken=; max-age=-99999999; path=/`;
+            notification.success({
+                message: `Logout Successfully`,
+                description: `You have been logged out successfully`,
+                duration: 3,
+                showProgress: true,
+                pauseOnHover: false,
+            });
+        } else {
+            notification.error({
+                message: `Logout Failed ${result?.error?.error}`,
+                description: `${result?.error?.message}`,
+                duration: 3,
+                showProgress: true,
+            });
+        }
+    };
+
+    return (
+        <Sider
+            width={270}
+            collapsible
+            className="sticky bottom-0 top-0 h-[calc(100vh-48px)] min-h-[calc(100vh)] overflow-auto"
         >
-          Logout
-        </Button>
-      </div>
-    </Sider>
-  );
+            <div className="flex justify-center items-center p-4 m-4 h-16 bg-white rounded-md">
+                <Image src={mLenz} alt="logo" className="w-full h-auto" />
+            </div>
+            <Menu
+                theme="dark"
+                mode="inline"
+                selectedKeys={selectedKeys}
+                openKeys={openKeys}
+                onOpenChange={setOpenKeys}
+                onClick={handleMenuClick }
+                items={items}
+            />
+            <div className="flex justify-center items-center m-4">
+                <Button
+                    danger
+                    type="primary"
+                    variant="primary"
+                    onClick={() => handleLogout()}
+                    className="mx-auto mb-16 w-full animate-bounce-reveal"
+                    loading={isLoading}
+                    disabled={isLoading}
+                >
+                    Logout
+                </Button>
+            </div>
+        </Sider>
+    );
 };
 
 export default Sidebar;
