@@ -5,9 +5,8 @@ import {
     Map,
     Pin,
 } from "@vis.gl/react-google-maps";
-import { Modal } from "antd";
+import { Image, Modal } from "antd";
 import dayjs from "dayjs";
-import Image from "next/image";
 import { useCallback, useState } from "react";
 
 const ReportLocator = ({ data, isOpen, onClose }) => {

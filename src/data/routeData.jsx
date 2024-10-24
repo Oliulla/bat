@@ -13,6 +13,9 @@ import PointHistory from "@/pages/InventoryManagement/PointHistory/PointHistory"
 import PointSummary from "@/pages/InventoryManagement/PointSummary/PointSummary";
 import MyProfile from "@/pages/MyProfile/MyProfile";
 import Notice from "@/pages/Notice/Notice";
+import PmmDashboard from "@/pages/PmmManagement/PmmDashboard/PmmDashboard";
+import PmmMonitoring from "@/pages/PmmManagement/PmmMonitoring/PmmMonitoring";
+import PmmProfile from "@/pages/PmmManagement/PmmProfile/PmmProfile";
 import AddGroup from "@/pages/SuperUser/AddGroup/AddGroup";
 import AddUser from "@/pages/SuperUser/AddUser/AddUser";
 import LoginDetails from "@/pages/SuperUser/LoginDetails/LoginDetails";
@@ -108,9 +111,19 @@ const routeData = [
     },
     // INFO: pmm management module
     {
-        name: "PMM Management",
-        path: "/pmm-management",
-        element: <MyProfile />,
+        name: "PMM Dashboard",
+        path: "/pmm-management/pmm-dashboard",
+        element: <PmmDashboard />,
+    },
+    {
+        name: "PMM Monitoring",
+        path: "/pmm-management/pmm-monitoring",
+        element: <PmmMonitoring />,
+    },
+    {
+        name: "PMM Profile",
+        path: "/pmm-management/pmm-profile",
+        element: <PmmProfile />,
     },
 
     // INFO: Visit call children's

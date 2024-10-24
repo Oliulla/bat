@@ -72,17 +72,17 @@ export const items = [
         children: [
             {
                 label: "PMM Dashboard",
-                key: "/pmm-dashboard",
+                key: "/pmm-management/pmm-dashboard",
                 icon: <MdMapsHomeWork />,
             },
             {
                 label: "PMM Monitoring",
-                key: "/pmm-monitoring",
+                key: "/pmm-management/pmm-monitoring",
                 icon: <FaEdit />,
             },
             {
                 label: "PMM Profile",
-                key: "/pmm-profile",
+                key: "/pmm-management/pmm-profile",
                 icon: <MdVerified />,
             },
         ],
