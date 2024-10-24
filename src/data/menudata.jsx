@@ -40,16 +40,16 @@ export const items = [
     },
     {
         label: "Notice",
-        key: "/attendance",
+        key: "/notice",
         icon: <MdOutlineCoPresent />,
         serial: 3,
     },
     {
-      label: "PMM Management",
-      key: "/student-labor/report",
-      icon: <GrUserWorker />,
-      serial: 5,
-  },
+        label: "PMM Management",
+        key: "/student-labor/report",
+        icon: <GrUserWorker />,
+        serial: 5,
+    },
     {
         label: "Training Materials",
         key: "/training-materials",
@@ -65,32 +65,28 @@ export const items = [
     },
     {
         label: "Attendance",
-        key: "/Attendance",
+        key: "/attendance",
         icon: <BiSolidReport />,
         serial: 7,
-      
     },
     {
         label: "Attendance Tracker",
         key: "/attendance-tracker",
         icon: <TbReport />,
         serial: 8,
-      
     },
-    
+
     {
         label: "Leave Management",
         key: "/leave-management",
         icon: <BsReceiptCutoff />,
         serial: 10,
-      
     },
     {
         label: "Team Management",
         key: "/team-management",
         icon: <MdMapsHomeWork />,
         serial: 11,
-      
     },
     {
         label: "Data Management",
@@ -103,68 +99,65 @@ export const items = [
         key: "/target-limit",
         icon: <FaTableCells />,
         serial: 13,
-       
     },
     {
         label: "NMSM PJP",
         key: "/nmsm-pjp",
         icon: <FaTableCells />,
         serial: 13,
-       
     },
     {
         label: "Campaign Point Opening",
         key: "/campaign-point-opening",
         icon: <FaTableCells />,
         serial: 13,
-       
     },
     {
-      label: "Inventory Management",
-      key: "/inventory-management",
-      icon: <FaTableCells />,
-      serial: 13,
+        label: "Inventory Management",
+        key: "/inventory-management",
+        icon: <FaTableCells />,
+        serial: 13,
     },
     {
-      lagel: "Material Management",
-      key: "/material-management",
-      icon: <FaTableCells />,
-      serial: 13, 
-    }, {
-      label: "Daily Activity Report",
-      key: "/daily-activity-report",
-      icon: <FaTableCells />,
-      serial: 13,
+        lagel: "Material Management",
+        key: "/material-management",
+        icon: <FaTableCells />,
+        serial: 13,
     },
     {
-      label: "Visit Call",
-      key: "/visit-call",
-      icon: <FaTableCells />,
-      serial: 13,
+        label: "Daily Activity Report",
+        key: "/daily-activity-report",
+        icon: <FaTableCells />,
+        serial: 13,
     },
     {
-      label: "MS Evaluation ",
-      key: "/ms-evaluation",
-      icon: <FaTableCells />,
-      serial: 13, 
+        label: "Visit Call",
+        key: "/visit-call",
+        icon: <FaTableCells />,
+        serial: 13,
     },
-  {
-    label: "New Outlet",
-    key: '/new-outlet',
-    icon: <FaUsers />
-    ,serial: 965,
-
-  },
-  {
-    label: "Download Report",
-    key: "/download-report",
-    icon: <FaUser />,
-    serial: 5642
-  },
-  {
-    label: "Image Download ",
-    key: "/image-download",
-    icon: <FaUser />,
-    serial: 5642
-  }
+    {
+        label: "MS Evaluation ",
+        key: "/ms-evaluation",
+        icon: <FaTableCells />,
+        serial: 13,
+    },
+    {
+        label: "New Outlet",
+        key: "/new-outlet",
+        icon: <FaUsers />,
+        serial: 965,
+    },
+    {
+        label: "Download Report",
+        key: "/download-report",
+        icon: <FaUser />,
+        serial: 5642,
+    },
+    {
+        label: "Image Download ",
+        key: "/image-download",
+        icon: <FaUser />,
+        serial: 5642,
+    },
 ];
