@@ -37,7 +37,6 @@ const MyProfile = () => {
   const handleFiltersTrigger = async (filters) => {
     try {
       await triggerFilters(filters);
-      console.log("filtaer", filterData);
       // setRegions(filterData?.data?.region);
     } catch (error) {
       console.log("Error fetching campaign filters :", error);
@@ -70,7 +69,6 @@ const MyProfile = () => {
     console.log("submitted data=> ", data);
   };
 
-  console.log("regions", regions);
   return (
     <div className="content-container">
       <Form className="grid grid-cols-4 gap-5" onSubmit={handleSubmit}>
@@ -111,7 +109,7 @@ const MyProfile = () => {
         />
       </Form>
       <MainHeader title="My Profile" />
-      <div className="w-full p-10">
+      <div className="p-10 w-full">
         <Form
           onFinish={onSubmit}
           layout="horizontal"

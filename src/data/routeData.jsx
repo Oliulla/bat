@@ -1,4 +1,5 @@
 import MyProfile from "@/pages/MyProfile/MyProfile";
+import Tickets from "@/pages/Tickets/Tickets";
 
 const routeData = [
   {
@@ -19,7 +20,7 @@ const routeData = [
   {
     name: "Tickets",
     path: "/tickets",
-    element: <MyProfile />,
+    element: <Tickets/> ,
   },
   {
     name: "Notice",

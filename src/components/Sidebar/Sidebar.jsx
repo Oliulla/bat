@@ -10,9 +10,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+
     const navigate = useNavigate()
     const dispatch = useAppDispatch();
-    const [selectedKeys, setSelectedKeys] = useState("");
+    const [selectedKey, setSelectedKey] = useState();
     const [openKeys, setOpenKeys] = useState([]);
     const [logout, { isLoading, isError, error }] = useLogoutMutation();
     const getOpenKeys = (path) => {
@@ -23,25 +24,22 @@ const Sidebar = () => {
         return [];
     };
 
-    const getSelectedKeys = (path) => [
-        path.split('/').filter(Boolean).join('/'),
-    ];
+
 
     useEffect(() => {
         const path = window.location.pathname;
-        dispatch(setCurrentPath(path));
-        setSelectedKeys(getSelectedKeys(path));
-        setOpenKeys(getOpenKeys(path));
-    }, [window?.location?.pathname , dispatch]);
+        dispatch(setCurrentPath(path))
+        setSelectedKey(path);
+        console.log("path", path )
+        // setOpenKeys(getOpenKeys(path));
+    }, [dispatch]);
 
     const handleMenuClick = ({ key }) => {
-        console.log("key", key)
-        dispatch(setCurrentPath(key));
-        navigate(key)
-        setSelectedKeys(key)
+        dispatch(setCurrentPath(key))
+        navigate(key) 
+        setSelectedKey(key)
     };
 
-    console.log("selected key", selectedKeys)
 
 
     const handleLogout = async () => {
@@ -67,6 +65,7 @@ const Sidebar = () => {
         }
     };
 
+
     return (
         <Sider
             width={270}
@@ -79,11 +78,11 @@ const Sidebar = () => {
             <Menu
                 theme="dark"
                 mode="inline"
-                selectedKeys={selectedKeys}
                 openKeys={openKeys}
                 onOpenChange={setOpenKeys}
                 onClick={handleMenuClick }
                 items={items}
+                defaultSelectedKeys={[selectedKey]} 
             />
             <div className="flex justify-center items-center m-4">
                 <Button

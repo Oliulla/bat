@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 // Initial state
 const initialState = {
-    currentPath: 'my-profile', // Default path
+    currentPath: '/', // Default path
 };
 
 // Create the slice
@@ -12,7 +12,10 @@ const pathSlice = createSlice({
     initialState,
     reducers: {
         setCurrentPath(state, action) {
-            state.currentPath = action.payload; // Update currentPath with the new value
+
+            console.log("payload ",action.payload)
+
+            return state.currentPath = action.payload; // Update currentPath with the new value
         },
     },
 });

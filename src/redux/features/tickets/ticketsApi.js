@@ -1,4 +1,5 @@
-import { api } from '@/redux/api/apiSlice';
+import { api } from "@/redux/api/apiSlice";
+
 
 const ticketsApi = api.injectEndpoints({
     endpoints: (builder) => ({
