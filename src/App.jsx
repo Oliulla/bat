@@ -1,11 +1,18 @@
+import routeData from "@/data/routeData";
+import { Route, Routes } from "react-router-dom";
+import DashboardLayout from "./Layout/Layout";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-xl font-bold underline">
-        Hello, Tailwind with React + Vite!
-      </h1>
-    </div>
+    <Routes>
+      {routeData.map(({ path, element }, i) => (
+        <Route
+          key={i}
+          path={path}
+          element={<DashboardLayout>{element}</DashboardLayout>}
+        />
+      ))}
+    </Routes>
   );
 }
-
 export default App;
