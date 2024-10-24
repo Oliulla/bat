@@ -1,5 +1,5 @@
 import MainHeader from "@/components/Headers/MainHeader";
-import ViewUsers from "@/components/SuperUser/ViewUsers";
+import UserDetails from "@/components/SuperUser/ViewUsers";
 import { Table } from "antd";
 
 const columns = [
@@ -57,13 +57,13 @@ const data = Array.from({ length: 153 }).map((_, i) => ({
     description: `My name is John Brown, I am ${i}2 years old, living in New York No. ${i} Lake Park. I am very happy to meet you! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
 }));
 
-const LoginDetails = () => {
+const ViewUsers = () => {
     const tableColumns = columns?.map((item) => ({ ...item }));
 
     return (
         <div>
             <div className="mb-8 filters">
-                <ViewUsers />
+                <UserDetails />
             </div>
             <div className="content-container">
                 <MainHeader title="View Users" />
@@ -87,4 +87,4 @@ const LoginDetails = () => {
     );
 };
 
-export default LoginDetails;
+export default ViewUsers;
