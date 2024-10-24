@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #f9c700;
+  --primary-color-light: #fada00;
+  --primary-color-dark: #2c2c2c;
+}
+
+@layer utilities {
+  .filters-container {
+    @apply rounded-xl bg-white shadow-md;
+    @apply w-full;
+  }
+
+  .content-container {
+    @apply rounded-xl bg-white shadow-md;
+    @apply w-full;
+  }
+
+  .execution-item {
+    @apply mb-2 rounded-2xl bg-white p-2 shadow-md;
+  }
+}
+
+/* @layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+} */
+
+/* tr.ant-table-row {
+    border-radius: 10px;
+    box-shadow: 0 1px 3px #36508a4d;
+    border: 10px solid gray;
+    background-color: red;
+}
+ */
+
+/* td.ant-table-cell {
+    border: 0px !important;
+}
+
+
+tr.ant-table-row.ant-table-row-level-0 > td.ant-table-cell:last-child {
+    background-color: red;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+tr.ant-table-row.ant-table-row-level-0.first__row__column
+    td.ant-table-cell:first-child {
+    background: #fada00;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+} */
+
+.attendance-tabs > .ant-tabs-nav {
+  display: none !important;
+}
+
+.ant-table table {
+  /* border-spacing: 0 15px; */
+}
+
+tr.ant-table-row.ant-table-row-level-0.custom-row td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+tr.ant-table-row.ant-table-row-level-0.custom-row
+  > td.ant-table-cell:first-child {
+  background-color: red;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: var(--primary-color);
+  font-size: 25px;
+  font-weight: bolder;
+}
