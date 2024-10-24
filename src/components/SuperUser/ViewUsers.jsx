@@ -1,6 +1,6 @@
 import { Button, Form, Input, Select } from "antd";
 
-const ViewUsers = () => {
+const UserDetails = () => {
     const [form] = Form.useForm();
 
     const handleSubmit = async (values) => {
@@ -91,4 +91,4 @@ const ViewUsers = () => {
     );
 };
 
-export default ViewUsers;
+export default UserDetails;

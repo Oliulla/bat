@@ -3,6 +3,9 @@ import MyProfile from "@/pages/MyProfile/MyProfile";
 import Notice from "@/pages/Notice/Notice";
 import AddGroup from "@/pages/SuperUser/AddGroup/AddGroup";
 import AddUser from "@/pages/SuperUser/AddUser/AddUser";
+import LoginDetails from "@/pages/SuperUser/LoginDetails/LoginDetails";
+import ViewGroups from "@/pages/SuperUser/ViewGroups/ViewGroups";
+import UserDetails from "@/pages/SuperUser/ViewUsers/ViewUsers";
 import Tickets from "@/pages/Tickets/Tickets";
 
 const routeData = [
@@ -11,7 +14,6 @@ const routeData = [
         path: "/",
         element: <MyProfile />,
     },
-
     {
         name: "Super User",
         path: "/super-user",
@@ -23,19 +25,9 @@ const routeData = [
         element: <AddGroup />,
     },
     {
-        name: "Add Group",
-        path: "/super-user/add-group",
-        element: <AddGroup />,
-    },
-    {
         name: "View Groups",
         path: "/super-user/view-groups",
-        element: <MyProfile />,
-    },
-    {
-        name: "Edit Group",
-        path: "/super-user/edit-group",
-        element: <MyProfile />,
+        element: <ViewGroups />,
     },
     {
         name: "Add User",
@@ -45,7 +37,12 @@ const routeData = [
     {
         name: "View Users",
         path: "/super-user/view-users",
-        element: <MyProfile />,
+        element: <UserDetails />,
+    },
+    {
+        name: "Login Details",
+        path: "/super-user/login-details",
+        element: <LoginDetails />,
     },
     {
         name: "Dashboard",

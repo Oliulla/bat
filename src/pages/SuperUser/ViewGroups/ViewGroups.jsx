@@ -1,6 +1,6 @@
 import MainHeader from "@/components/Headers/MainHeader";
 import { Table } from "antd";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const columns = [
     {
@@ -43,7 +43,7 @@ const defaultExpandable = {
     expandedRowRender: (record) => <p>{record.description}</p>,
 };
 
-const App = () => {
+const ViewGroups = () => {
     const [hasData, setHasData] = useState(true);
     const [ellipsis, setEllipsis] = useState(false);
     const [yScroll, setYScroll] = useState(false);
@@ -84,4 +84,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default ViewGroups;

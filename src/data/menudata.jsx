@@ -38,18 +38,18 @@ export const items = [
                 icon: <FaUsers />,
             },
             {
-                label: "Edit Group",
-                key: "/super-user/edit-group",
-                icon: <FaEdit />,
-            },
-            {
                 label: "Add User",
                 key: "/super-user/add-user",
-                icon: <FaUser />,
+                icon: <FaEdit />,
             },
             {
                 label: "View Users",
                 key: "/super-user/view-users",
+                icon: <FaUser />,
+            },
+            {
+                label: "Login Details",
+                key: "/super-user/login-details",
                 icon: <FaUsers />,
             },
         ],
