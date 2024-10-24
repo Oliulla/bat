@@ -1,10 +1,10 @@
-import Buttn from "../Btn";
+import MyProfile from "@/pages/MyProfile/MyProfile";
 
 const routeData = [
   {
-    name: "btn",
-    path: "/btn",
-    element: <Buttn />,
+    name: "",
+    path: "/",
+    element: <MyProfile />,
   },
 ];
 
